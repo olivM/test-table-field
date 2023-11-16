@@ -3,6 +3,6 @@
     :field="$field"
 >
     <div x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }">
-        <!-- Interact with the `state` property in Alpine.js -->
+         {{$this->table}}
     </div>
 </x-dynamic-component>

@@ -18,6 +18,7 @@ class Table1 extends Field  implements HasForms, HasTable
     use InteractsWithTable;
     use InteractsWithForms;
 
+
     public function table(Table $table): Table
     {
         return $table

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Forms\Components\Table1;
 use Filament\Pages\Page;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -21,20 +22,19 @@ class Test1 extends Page  implements HasForms
         return $form
             ->schema([
                 Wizard::make([
-    Wizard\Step::make('Order')
-        ->schema([
-            // ...
-        ]),
-    Wizard\Step::make('Delivery')
-        ->schema([
-            // ...
-        ]),
-    Wizard\Step::make('Billing')
-        ->schema([
-            // ...
-        ]),
-])
-
+                    Wizard\Step::make('Order')
+                        ->schema([
+                           Table1::make('table1')
+                        ]),
+                    Wizard\Step::make('Delivery')
+                        ->schema([
+                            //Table2::make('table2')
+                        ]),
+                    Wizard\Step::make('Billing')
+                        ->schema([
+                            // ...
+                        ]),
+                    ])
             ])
             ->statePath('data');
     }

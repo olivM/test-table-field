@@ -23,7 +23,7 @@ class Table2 extends Field  implements HasForms, HasTable
         return $table
             ->query(User::query())
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('email'),
             ])
             ->filters([
                 // ...
