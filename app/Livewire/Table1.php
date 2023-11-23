@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Forms\Components\Table2;
 use App\Models\User;
+use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -14,10 +16,11 @@ use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
 use Livewire\Component;
 
-class Table1 extends Component  implements HasForms, HasTable
+class Table1 extends Component  implements HasForms, HasTable, HasActions
 {
     use InteractsWithTable;
     use InteractsWithForms;
+    use InteractsWithActions;
     public function render()
     {
         return view('livewire.table1');

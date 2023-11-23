@@ -4,14 +4,15 @@ namespace App\Filament\Pages;
 
 use App\Forms\Components\Table1;
 use App\Forms\Components\Table2;
-use Filament\Forms\Components\ViewField;
+use Filament\Actions\Action;
+use Filament\Actions\Contracts\HasActions;
+use Filament\Forms\Components\Placeholder;
 use Filament\Pages\Page;
 use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Wizard;
-use Illuminate\View\View;
 
 class Test1 extends Page  implements HasForms
 {
@@ -20,27 +21,11 @@ class Test1 extends Page  implements HasForms
 
     protected static string $view = 'filament.pages.test1';
 
-    public function form(Form $form): Form
+    public function testAction(): Action
     {
-        return $form
-            ->schema([
-                Wizard::make([
-                    Wizard\Step::make('Order')
-                        ->schema([
-                            Table1::make('table1'),
-
-                        ]),
-                    Wizard\Step::make('Delivery')
-                        ->schema([
-                            Table2::make('table2'),
-                        ]),
-                    Wizard\Step::make('Billing')
-                        ->schema([
-                            // ...
-                        ]),
-                    ])
-            ])
-            ->statePath('data');
+        return Action::make('test')
+            ->requiresConfirmation()
+            ->action(function () {});
     }
 
 }
