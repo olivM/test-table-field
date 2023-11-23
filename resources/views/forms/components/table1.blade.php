@@ -3,6 +3,6 @@
     :field="$field"
 >
     <div x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }">
-        {{$this->table}}
+        @livewire('table1')
     </div>
 </x-dynamic-component>
