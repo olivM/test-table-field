@@ -33,7 +33,7 @@ class TestForm extends Component implements HasForms, HasActions
                             Table1::make('table1'),
                             Forms\Components\Placeholder::make('action_test_1')
                                 ->hintAction(
-                                    \Filament\Forms\Components\Actions\Action::make('test')
+                                    \Filament\Forms\Components\Actions\Action::make('test1')
                                         ->icon('heroicon-m-clipboard')
                                         ->requiresConfirmation()
                                         ->action(function ( $state) {
@@ -42,7 +42,7 @@ class TestForm extends Component implements HasForms, HasActions
                                 ),
                             Forms\Components\TextInput::make('action_test_2')
                                 ->suffixAction(
-                                   \Filament\Forms\Components\Actions\Action::make('test')
+                                   \Filament\Forms\Components\Actions\Action::make('test2')
                                         ->icon('heroicon-m-clipboard')
                                         ->requiresConfirmation()
                                         ->action(function ( $state) {
