@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use App\Forms\Components\Table2;
-use App\Models\User;
+use App\Models\Group;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Components\TextInput;
@@ -28,7 +28,7 @@ class Table1 extends Component  implements HasForms, HasTable, HasActions
     public function table(Table $table): Table
     {
         return $table
-            ->query(User::query())
+            ->query(Group::query())
             ->columns([
                 TextColumn::make('name'),
             ])
@@ -40,8 +40,7 @@ class Table1 extends Component  implements HasForms, HasTable, HasActions
                     ->form([
                         Table2::make('table2'),
                     ])
-                    ->action(function (array $data): void {
-                    })
+                    ->action(function (array $data): void {})
             ])
             ->bulkActions([
                 // ...
